@@ -56,8 +56,11 @@ body {
 	<div class="update">
 		<br>
 		<form action="update" method="post">
+<!-- 		<p>Username</P>
+			<input type="hidden" name="upname" /> <br> <br>
+ -->		
 			<p>password</P>
-			<input type="password" name="ups" /> <br> <br>
+			<input type="password" name="uppass" /> <br> <br>
 			<p>Gmail</p>
 			<input type="text" name="upgmail" /> <br> <br>
 			<p>Location</p>

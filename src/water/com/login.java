@@ -63,11 +63,17 @@ public class login extends HttpServlet {
 			if (encryptedPassword.equals(dbpass)) {
 				
 				 HttpSession session=request.getSession();  
+				 
 			        
-				 session.setAttribute("name",user);  
-			        
-//				System.out.print(session.setAttribute("name",user););
-//				out.println(session.setAttribute("name",user));
+				 session.setAttribute("name",user);  																																						
+//				 session.setAttribute("name",user);
+//				 session.setAttribute("name",user);
+				 String s = (String) session.getAttribute("name");
+				 
+								 
+				 //String loginusername=s;
+				//System.out.print(s);
+				//out.println(session.setAttribute("name",user));
 				
 				 out.println("<script type=\"text/javascript\">");
 				 out.println("alert('login succefully');");
@@ -118,6 +124,11 @@ public class login extends HttpServlet {
 			e.printStackTrace();
 		}
 
+	}
+
+	private String getusername(String s) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

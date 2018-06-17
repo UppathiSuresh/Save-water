@@ -78,6 +78,7 @@
 	<h1 align="center" style="color: darkGreen">SAVE WATER</h1>
 
 	<div class="navbar">
+	<a href="#" style="hight:10px";><h1>SAVE WATER</h1></a>
 		<a href="home.jsp">Home</a> <a href="contact.jsp">Contact</a>
 		<div class="dropdown">
 			<button class="dropbtn">

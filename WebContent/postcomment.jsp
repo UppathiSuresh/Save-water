@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%@ page import="java.util.List"%>
+	<%@ page import="water.com.model.Posts"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -55,12 +56,13 @@
 	<hr>
 	
 	<% 
-	List<String> posts =  water.com.post.GetAllPosts();
+	List<Posts> posts =  water.com.post.GetAllPosts();
 		
-	for (String post: posts){
+	for (Posts post: posts){
 			%>
 			<div class="user-comment">
-				<%out.println(post); %>
+				<%out.println(post.username); %> ::
+				<%out.println(post.comment); %>
 		<hr>
 			</div>
 			<% 

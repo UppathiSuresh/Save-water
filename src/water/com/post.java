@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import water.com.model.Posts;
+
 /**
  * Servlet implementation class post
  */
@@ -67,13 +69,14 @@ public class post extends HttpServlet {
 		
 	
 
-		String sql = "insert into post(ID,comments)values(?,?)";
+		String sql = "insert into post(ID,comments,username)values(?,?,?)";
 		
 				
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(2,user_comment );
 		ps.setString(1, commentId.toString());
-		//ps.setString(3, username);
+		
+		ps.setString(3, username);
 		
 				//System.out.print("username:"+username);
 		//ps.setString(2,encryptedPassword);
@@ -104,19 +107,23 @@ public class post extends HttpServlet {
 	
 	}
 
-	public static List<String> GetAllPosts() {
-		List<String> posts = new ArrayList<String>();
+	public static List<Posts> GetAllPosts() {
+	 
+		List<Posts> posts = new ArrayList<Posts>();
 		try {
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "suresh");
-			String sql = "select comments from post";
+			String sql = "select comments,username from post";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()) {
-				String post = rs.getString(1).trim();
-				posts.add(post);
+				String comment = rs.getString("comments");
+				String username = rs.getString("username");
+				
+				Posts p = new Posts(username, comment);
+				posts.add(p);
 			}
 			
 		}

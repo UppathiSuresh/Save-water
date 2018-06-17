@@ -32,7 +32,7 @@ font-family:sans-serif;
 	padding: 70px 30px;
 }
 
-.baby {
+.avatar {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
@@ -100,7 +100,7 @@ h1 {
 </head>
 <body>
 	<div class="login-box">
-		<img src="baby.jpg" class="baby" />
+		<img src="img_avatar2.png" alt="avatar" class="avatar" />
 		<h1>LOGIN FORM</h1>
 		
 	<!--  	<form method="post" type="login"> -->
